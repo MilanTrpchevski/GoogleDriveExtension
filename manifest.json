@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Google Drive Search Extension",
+    "version": "1.0",
+    "description": "A Chrome extension to search through Google Drive using an API key.",
+    "permissions": [
+      "identity",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/logo_image.png",
+        "48": "icons/logo_image.png",
+        "128": "icons/logo_image.png"
+      }
+    },
+    "icons": {
+      "16": "icons/logo_image.png",
+      "48": "icons/logo_image.png",
+      "128": "icons/logo_image.png"
+    },
+    "oauth2": {
+      "client_id": "1080265799924-b9hrib34mg8iihtht4f07pdj7ijsijn3.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/drive.metadata.readonly"
+      ]
+    }
+  }
+  
