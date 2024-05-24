@@ -4,46 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Drive Search</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    #query {
-      padding: 8px;
-      margin-right: 8px;
-    }
-    #search {
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #search:hover {
-      background-color: #45a049;
-    }
-    #results {
-      list-style-type: none;
-      padding: 0;
-    }
-    #results li {
-      margin-bottom: 4px;
-    }
-    #results li a {
-      text-decoration: none;
-      color: #333;
-    }
-    #results li a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="popup-style.css">
 </head>
 <body>
-  <input type="text" id="query" placeholder="Search Drive">
-  <button id="search">Search</button>
-  <ul id="results"></ul>
+  <div class="container">
+    <input type="text" id="query" placeholder="Search Drive">
+    <button id="search">Search</button>
+  </div>
+
+    <ul id="results"></ul>
+ 
   <script src="popup.js" defer></script>
   </body>
 </html>

@@ -1,3 +1,25 @@
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "contextMenuItem",
+    title: "Search Google Drive for \"%s\"",
+    contexts: ["selection"]
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === "contextMenuItem") {
+    const selectedText = info.selectionText;
+    console.log("Selected text: " + selectedText);
+
+    // Create a new tab with the popup.html and pass the selected text as a query parameter
+    chrome.tabs.create({
+      url: chrome.runtime.getURL(`popup.html?query=${encodeURIComponent(selectedText)}`)
+    });
+  }
+});
+
+// chrome.action.openPopup();
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'search') {
     getAuthToken(true).then(token => {
